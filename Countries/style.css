@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: aliceblue;
+}
+header {
+    background-color: bisque;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+img {
+    width: 100%;
+}
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: orangered;
+}
+.country-detail-container {
+    width: 800px;
+    background-color: #333333;
+    color: rgb(250, 244, 233);
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.name {
+    margin-top: -30px;
+}
+#close-btn {
+    background-color: red;
+    border-radius: 50%;
+    padding:10px 15px ;
+    position: relative;
+    left: 420px;
+    top: -50px;
+    margin-bottom: -60px;
+}
+
+.countries-container {
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.country-card {
+    border: 1px solid #bdb8b8;
+    padding: 20px 20px;
+    text-align: center;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.flag {
+    border: 1px solid #f2f2f2;
+    border-radius: 10px;
+    max-width: 150px;
+}
+.flag img {
+    margin-bottom: -5px;
+    border-radius: 10px;
+}
+.country-name {
+    padding: 0 0 10px 0;
+    margin: 0;
+}
+.capital {
+    padding: 0;
+    margin: 0;
+}
