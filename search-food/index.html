@@ -28,7 +28,7 @@
               </div>
             </a>
 
-            <div class="form-inline my-2 my-lg-0">
+            <form class="form-inline my-2 my-lg-0">
               <input
                   type="text"
                   class="form-control"
@@ -37,14 +37,14 @@
                   placeholder="Search Your Food Here"
                 />
                 <button
-                  onclick="showResults()"
+                  onclick="showResults(event)"
                   id="search-btn"
                   type="submit"
                   class="btn btn-primary w-100"
                 >
                   Search
                 </button>
-              </div>
+              </form>
           </nav>
         </div>
       </section>
@@ -53,7 +53,7 @@
     <section class="title p-5">
       <div class="container">
         <div class="home-title text-white text-center">
-          <h1>All Food Details</h1>
+          <h1 id="main-heading">All Food Details</h1>
         </div>
       </div>
     </section>

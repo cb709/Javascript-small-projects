@@ -28,7 +28,8 @@ const showFoods = (foods) => {
     });
 }
 
-function showResults() {
+function showResults(event) {
+    event.preventDefault();
     const searchText = searchInput.value;
     if(searchText === '') {
         alert("Enter Food Name to Search")
@@ -38,6 +39,7 @@ function showResults() {
     }
 
     searchInput.value = '';
+    document.getElementById('main-heading').innerHTML = `Search Result for "${searchText}"`
 }
 
 function showFoodDetails(id) {

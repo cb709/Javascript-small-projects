@@ -1,3 +1,6 @@
+let headingText = document.getElementById('heading').innerText;
+console.log(headingText);
+
 function loadData() {
   fetch("https://restcountries.com/v3.1/all")
     .then((res) => res.json())
@@ -5,7 +8,7 @@ function loadData() {
 }
 
 function displayData(data) {
-  document.getElementById('heading').innerText = `All Countries` 
+  document.getElementById('heading').innerText = "All Countries Here" 
   const countriesDiv = document.getElementById("countries-container");
   countriesDiv.innerHTML = ` `;
   for (const country of data) {
@@ -62,6 +65,7 @@ function showSearchResult() {
 }
 
 function displaySearchData(data) {
+  
   const allCountries = data;
   const result = [];
   const searchText = document.getElementById("search").value.toLowerCase();
@@ -77,9 +81,10 @@ function displaySearchData(data) {
       }
     });
   }
-  document.getElementById('heading').innerText = `Search result for "${searchText}"` 
   document.getElementById("search").value = '';
   displayData(result)
+  document.getElementById('heading').innerText = `Search result for "${searchText}"`
 }
 
 loadData();
+// console.log(headingText)
