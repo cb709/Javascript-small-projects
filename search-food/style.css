@@ -1,0 +1,81 @@
+body {
+  background-color: #2e2e34;
+}
+img {
+  width: 100%;
+}
+
+.logo {
+  max-width: 45px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+button {
+  border-radius: 5px;
+  border: none;
+  background-color: blueviolet;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: orangered;
+}
+
+.navbar-expand-lg {
+  justify-content: space-between;
+}
+
+.form-inline {
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.card-img,
+.card-img-bottom,
+.card-img-top {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+}
+.food-card {
+  transition: all 0.3s ease-in-out;
+}
+.food-card:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: translateY(-10px);
+}
+
+/* ----------------media queries----------------- */
+
+@media (max-width: 768px) {
+  .countries-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .countries-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .form-inline {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+}
+@media (max-width:380px) {
+    .navbar-expand-lg {
+        justify-content: center;
+      }
+      .form-inline {
+        width: 100%;
+      }
+}
+

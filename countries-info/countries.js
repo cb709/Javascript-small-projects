@@ -5,19 +5,22 @@ function loadData() {
 }
 
 function displayData(data) {
+  document.getElementById('heading').innerText = `All Countries` 
   const countriesDiv = document.getElementById("countries-container");
+  countriesDiv.innerHTML = ` `;
   for (const country of data) {
     const countryDiv = document.createElement("div");
-    countryDiv.classList.add = "countries";
     countriesDiv.innerHTML += `
           <div class="country-card">
           <div class="flag">
             <img src="${country.flags.svg}" alt="" />
           </div>
           <div class="info">
-            <h2 class="country-name">${country.name.common.slice(0,20)}</h2>
+            <h2 class="country-name">${country.name.common.slice(0, 20)}</h2>
             <h5 class="capital">Capital: ${country.capital}</h5>
-            <button class='explore-btn btn btn-outline-success' onclick="showData('${country.cca2}')">Explore</button>
+            <button class='explore-btn btn btn-outline-success' onclick="showData('${
+              country.cca2
+            }')">Explore</button>
           </div>
         </div>
         `;
@@ -50,6 +53,33 @@ function showCountryDetails(country) {
 function closeWindow() {
   document.getElementById("country-detail-container").style.display = "none";
 }
-loadData();
 
-console.log("hello");
+// ---------------search------------------
+function showSearchResult() {
+  fetch("https://restcountries.com/v3.1/all")
+    .then((res) => res.json())
+    .then((json) => displaySearchData(json));
+}
+
+function displaySearchData(data) {
+  const allCountries = data;
+  const result = [];
+  const searchText = document.getElementById("search").value.toLowerCase();
+  console.log(searchText);
+  // console.log(allCountries);
+  if (searchText == "") {
+    alert("Insert Search Text");
+  } else {
+    allCountries.forEach((element) => {
+      let value = element.name.common;
+      if (value.toLowerCase().includes(searchText)) {
+        result.push(element);
+      }
+    });
+  }
+  document.getElementById('heading').innerText = `Search result for "${searchText}"` 
+  document.getElementById("search").value = '';
+  displayData(result)
+}
+
+loadData();

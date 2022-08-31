@@ -27,6 +27,7 @@ button:hover {
 }
 .country-detail-container {
   width: 800px;
+  max-width: 80%;
   background-color: #120f0f;
   color: rgb(250, 244, 233);
   padding: 30px;
@@ -48,8 +49,8 @@ button:hover {
   height: 30px;
   width: 30px;
   position: relative;
-  left: 420px;
-  top: -50px;
+  left: 51%;
+  bottom: 23px;
   line-height: 30px;
 }
 
@@ -108,7 +109,7 @@ button:hover {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .countries-container {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -118,6 +119,12 @@ button:hover {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 10px;
+  }
+  #close-btn {
+
+    left: 183px;
+    top: -30px;
+    line-height: 30px;
   }
 }
 @media (max-width:380px) {
