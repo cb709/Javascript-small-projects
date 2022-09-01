@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="style.css" />
 
-    <title>Countries API</title>
+    <title>Phone Hunter</title>
     <link rel="icon" type="image/x-icon" href="../favicon.png" />
   </head>
   <body>
@@ -22,43 +22,29 @@
       <section class="bg-dark">
         <div class="container">
           <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="/index.html">
+            <a class="navbar-brand" href="../index.html">
               <div class="logo">
                 <img src="../Logo.png" alt="" srcset="" />
               </div>
             </a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#"
-                    >Home <span class="sr-only">(current)</span></a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" onclick="loadData()"
-                    >All Countries</a
-                  >
-                </li>
-              </ul>
-            </div>
 
-            <div class="form-inline my-2 my-lg-0">
+            <form class="form-inline my-2 my-lg-0">
               <input
-                id="search"
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button
-                id="search-btn"
-                class="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
-                onclick="showSearchResult()"
-              >
-                Search
-              </button>
-            </div>
+                  type="text"
+                  class="form-control"
+                  id="foodTitle"
+                  aria-describedby="emailHelp"
+                  placeholder="Search Your Food Here"
+                />
+                <button
+                  onclick="showResults(event)"
+                  id="search-btn"
+                  type="submit"
+                  class="btn btn-primary w-100"
+                >
+                  Search
+                </button>
+              </form>
           </nav>
         </div>
       </section>
@@ -67,35 +53,16 @@
     <section class="title p-5">
       <div class="container">
         <div class="home-title text-white text-center">
-          <h1 id="heading">All Countries</h1>
-          <div
-            class="country-detail-container"
-            id="country-detail-container"
-          ></div>
+          <h1 id="main-heading">Phoner Hunter</h1>
         </div>
       </div>
     </section>
 
     <main>
-      <div class="countries-container" id="countries-container"></div>
+      <section>
+        
+      </section>
     </main>
-
-    <div id ="spinner-container"class="d-flex justify-content-center">
-      <div id="spinner" class="lds-spinner">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -115,6 +82,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- ----------script----------- -->
-    <script src="countries.js"></script>
+   <script src="script.js"></script>
   </body>
 </html>
+

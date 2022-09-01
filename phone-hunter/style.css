@@ -1,0 +1,35 @@
+body {
+  background-color: #303033;
+}
+img {
+  width: 100%;
+}
+
+.logo {
+  max-width: 45px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+button {
+  border-radius: 5px;
+  border: none;
+  background-color: blueviolet;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: orangered;
+}
+
+.navbar-expand-lg {
+  justify-content: space-between;
+}
+
+.form-inline {
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
