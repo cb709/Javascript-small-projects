@@ -1,4 +1,4 @@
-let headingText = document.getElementById('heading').innerText;
+let headingText = document.getElementById("heading").innerText;
 console.log(headingText);
 
 function loadData() {
@@ -8,7 +8,7 @@ function loadData() {
 }
 
 function displayData(data) {
-  document.getElementById('heading').innerText = "All Countries Here" 
+  document.getElementById("heading").innerText = "All Countries Here";
   const countriesDiv = document.getElementById("countries-container");
   countriesDiv.innerHTML = ` `;
   for (const country of data) {
@@ -65,7 +65,6 @@ function showSearchResult() {
 }
 
 function displaySearchData(data) {
-  
   const allCountries = data;
   const result = [];
   const searchText = document.getElementById("search").value.toLowerCase();
@@ -81,9 +80,11 @@ function displaySearchData(data) {
       }
     });
   }
-  document.getElementById("search").value = '';
-  displayData(result)
-  document.getElementById('heading').innerText = `Search result for "${searchText}"`
+  document.getElementById("search").value = "";
+  displayData(result);
+  document.getElementById(
+    "heading"
+  ).innerText = `Search result for "${searchText}"`;
 }
 
 loadData();

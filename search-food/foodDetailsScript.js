@@ -1,29 +1,30 @@
-let mealId = localStorage.getItem('Id');
+let mealId = localStorage.getItem("Id");
 
-function showDetails (mealId) {
-    const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
-    fetch(url)
-    .then(res => res.json())
-    .then(data => showFoodDetails(data))
+function showDetails(mealId) {
+  const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => showFoodDetails(data));
 }
 
 function showFoodDetails(data) {
-    console.log(data)
-    const {meals : [
-        {   
-            idMeal: id,
-            strMealThumb:image,
-            strInstructions: instrustions,
-            strCategory: category,
-            strMeal: name,
-            strYoutube: youtubeLink
-        }
-    ]
-    } = data;
-    
-    const detailContainer  = document.getElementById('detail-container');
+  console.log(data);
+  const {
+    meals: [
+      {
+        idMeal: id,
+        strMealThumb: image,
+        strInstructions: instrustions,
+        strCategory: category,
+        strMeal: name,
+        strYoutube: youtubeLink,
+      },
+    ],
+  } = data;
 
-    detailContainer.innerHTML = `
+  const detailContainer = document.getElementById("detail-container");
+
+  detailContainer.innerHTML = `
     <div class="col-md-6 col-sm-12">
         <div class="food-image-container">
             <img src="${image}" alt="food-image" id="food-image">
@@ -64,38 +65,38 @@ function showFoodDetails(data) {
             </div>
         </div>
     </div>
-    `
-    const measurement = [];
-    const ingredients = [];
-    const obj = data.meals[0]
-    const keys = Object.keys(obj);
+    `;
+  const measurement = [];
+  const ingredients = [];
+  const obj = data.meals[0];
+  const keys = Object.keys(obj);
 
-    // -----------------getting ingredients-------------------
-    for (const key of keys) {
-        if(key.includes('strIngredient')){
-            // console.log(obj[key] == '')
-            if(obj[key]!= '') {
-                ingredients.push(obj[key]);
-            }
-        }
+  // -----------------getting ingredients-------------------
+  for (const key of keys) {
+    if (key.includes("strIngredient")) {
+      // console.log(obj[key] == '')
+      if (obj[key] != "") {
+        ingredients.push(obj[key]);
+      }
     }
+  }
 
-    // -------------getting measurements------------
-    for (const key of keys) {
-        if(key.includes('strMeasure')){
-            if(obj[key]!= ' ') {
-                measurement.push(obj[key]);
-            }
-        }
+  // -------------getting measurements------------
+  for (const key of keys) {
+    if (key.includes("strMeasure")) {
+      if (obj[key] != " ") {
+        measurement.push(obj[key]);
+      }
     }
-    
-    const ingredientsList = document.getElementById('ingredients')
-    ingredientsList.innerHTML =  ` `;
-    for( let i=0; i< ingredients.length; i++){
-        ingredientsList.innerHTML += `
+  }
+
+  const ingredientsList = document.getElementById("ingredients");
+  ingredientsList.innerHTML = ` `;
+  for (let i = 0; i < ingredients.length; i++) {
+    ingredientsList.innerHTML += `
          <li>${ingredients[i]} - ${measurement[i]}</li>
-        `
-    }
+        `;
+  }
 }
 
-showDetails(mealId)
+showDetails(mealId);
