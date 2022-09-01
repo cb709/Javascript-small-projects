@@ -13,6 +13,8 @@ const projects = [
   },
 ];
 
+
+
 function showProjects(projects) {
   const projectContainer = document.getElementById("project-container");
   const totalProjects = projects;

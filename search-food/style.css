@@ -1,5 +1,9 @@
+:root {
+  --bs-accordion-bg: rgba(255, 255, 255, 0);
+}
+
 body {
-  background-color: #2e2e34;
+  background-color: #303033;
 }
 img {
   width: 100%;
@@ -70,12 +74,95 @@ button:hover {
     gap: 10px;
   }
 }
-@media (max-width:380px) {
-    .navbar-expand-lg {
-        justify-content: center;
-      }
-      .form-inline {
-        width: 100%;
-      }
+@media (max-width: 380px) {
+  .navbar-expand-lg {
+    justify-content: center;
+  }
+  .form-inline {
+    width: 100%;
+  }
 }
 
+/* ------------food details page------------- */
+#detail-container {
+  padding: 50px 0;
+}
+.food-image-container {
+  padding-right: 30px;
+}
+.food-image-container img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.food-details-container {
+  padding-left: 30px;
+  color: white;
+}
+.food-name h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.food-name h6 {
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.food-name,
+.ingredients {
+  border-bottom: 1px solid rgba(196, 196, 196, 0.37);
+  margin-bottom: 20px;
+}
+.process {
+  margin-bottom: 20px;
+}
+
+.accordion-item {
+  background: rgba(0, 0, 0, 0);
+  color: white;
+}
+.accordion-button {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+.accordion-button:hover {
+  background-color: #198754;
+  color: white;
+}
+.accordion-button:not(.collapsed) {
+  color: #ffffff;
+  background-color: #198754;
+  box-shadow: none;
+}
+
+/* -------------media--------------- */
+
+@media (max-width: 768px) {
+  #food-title {
+    margin-bottom: 0 !important;
+  }
+  #detail-container {
+    padding: 30px 0;
+  }
+  .food-image-container {
+    padding: 0 20px;
+    padding-bottom: 20px;
+  }
+  .food-image-container img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .food-details-container {
+    padding: 0 30px;
+    color: white;
+  }
+  .food-name h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+  .food-name h6 {
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+}

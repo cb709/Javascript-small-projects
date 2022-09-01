@@ -15,7 +15,7 @@ const showFoods = (foods) => {
     // console.log(meals[1])
     meals.forEach(meal => {
         mealsContainer.innerHTML += `
-        <div class="col col-sm-6 col-md-4 mb-4">
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
             <div class="card h-100  food-card" onclick='showFoodDetails(${meal.idMeal})'>
                 <img src="${meal.strMealThumb}" class="card-img-top" alt="${meal.strMeal}" />
                 <div class="card-body">
@@ -41,9 +41,11 @@ function showResults(event) {
     searchInput.value = '';
     document.getElementById('main-heading').innerHTML = `Search Result for "${searchText}"`
 }
-
+// -----------set id valus to local Storage------------------
 function showFoodDetails(id) {
-    showDetails(id);
+    localStorage.clear();
+    localStorage.setItem("Id", id);
+    console.log(id)
     window.location.assign("foodDetails.html")
 }
 
