@@ -1,12 +1,12 @@
 body {
-  background-color: #303033;
+  background-color: #f8f8f8;
 }
 img {
   width: 100%;
 }
 
 .logo {
-  max-width: 45px;
+  max-width: 40px;
 }
 
 header {
@@ -32,4 +32,38 @@ button:hover {
   flex-direction: row;
   gap: 10px;
   flex-wrap: nowrap;
+}
+
+/* ===============navmenu====================== */
+.navbar-nav .dropdown-menu {
+  position: absolute;
+  float: none;
+}
+@media (max-width:560px) {
+  .navbar-expand-lg {
+    justify-content: center;
+}
+  .navbar-nav {
+    margin-right: 0 !important;
+  }
+  
+}
+
+/* ========phone cards=========== */
+.card {
+  border-radius: 15px;
+}
+
+.card-title {
+  margin-bottom: 0;
+}
+.card-body {
+  padding: 30px 10px 10px 10px;
+}
+.card {
+  transition: box-shadow 0.3s;
+}
+.card:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
