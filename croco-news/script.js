@@ -24,6 +24,7 @@ const showCategories = (data) => {
 
 // ---------- show category news by category id------------------
 const getNewsByCategoryID = (id, name) => {
+    loadSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`
     fetch(url)
     .then( res => res.json())
@@ -35,7 +36,7 @@ const getNewsByCategoryID = (id, name) => {
 const showNewsByCategory = (data, catName) => {
     const allNews = data.data;
     const allNewsDiv = document.getElementById('news-container');
-    mainHeading.innerHTML = `${catName}`
+    mainHeading.innerHTML = `${allNews.length ? allNews.length : "No" } News Found in ${catName}`
     allNewsDiv.innerHTML = ` `;
     allNews.forEach(news => {
         // console.log(news)
@@ -76,7 +77,7 @@ const showNewsByCategory = (data, catName) => {
                                             <img src="${img}" alt="">
                                         </div>
                                         <div class="col author-info">
-                                            <h5>Author: ${name}</h5>
+                                            <h5>Author: ${name ? name : "Name Not Given"}</h5>
                                             <p>Date: ${published_date}</p>
                                         </div>
                                     </div>
@@ -94,6 +95,7 @@ const showNewsByCategory = (data, catName) => {
             </div>
         `
     })
+    loadSpinner(false)
 }
 
 const getNewsDetailsById = (id) => {
@@ -105,7 +107,6 @@ const getNewsDetailsById = (id) => {
 }
 
 // show news details in modal
-
 const showNewsDetailsById = (data) => {
     // console.log(data)
     const modalBody = document.getElementById('modal-container');
@@ -140,6 +141,19 @@ const showNewsDetailsById = (data) => {
         </div>
     `
 }
+
+const loadSpinner = (isTrue) => {
+    const spinner = document.getElementById('spinner-container');
+    const newsContainer = document.getElementById('news-container');
+    if(isTrue) {
+        newsContainer.classList.add('d-none');
+        spinner.classList.remove('d-none');
+    }
+    else {
+        spinner.classList.add('d-none');
+        newsContainer.classList.remove('d-none');
+    }
+} 
 
 
 
