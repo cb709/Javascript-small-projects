@@ -26,6 +26,7 @@ hr {
 /* -----------main-heading------------- */
 #main-heading {
     padding: 10px 0 15px 0;
+    background-color: white;
 }
 /* ----------footer----------- */
 .copyright {
@@ -45,10 +46,52 @@ hr {
 }
 
 /* --------news-card----------- */
-/* .card-img, .card-img-bottom, .card-img-top {
+.card {
+    padding: 20px;
+}
+.card-img-top {
+    object-fit: cover;
+    border-radius: 8px;
+}
+/* -------------inf0------------ */
+.info {
+    align-items: center;
+    padding: 0 10px;
+    margin: 0;
+}
+/* ------------author---------- */
+.author-image {
+    max-width: 50px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #222222;
+    padding: 0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.author-image img {
     width: 100%;
-    max-width: 250px;
-} */
+}
+.author-info h5 , 
+.author-info p,
+.rating h5 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+
+.author-box .row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+.rating {
+    text-align: center;
+}
+.readmore {
+    text-align: end;
+}
 
 
 @media (max-width:1025px) {
@@ -56,9 +99,35 @@ hr {
         padding-left: 20px;
     }
 }
+
+@media (max-width:992px) {
+    .info {
+        padding: 0 0;
+        margin: 0;
+    }
+    .author-image {
+        max-width: 40px;;
+        width: 40px;
+        height: 40px;
+    }
+    .author-box {
+        width: 100%;
+    }
+    .rating {
+        width: 60%;
+        text-align: left;
+        padding: 0;
+    }
+    .readmore {
+        width: 40%;
+    }
+}
 @media (max-width:768px) {
     .navbar-brand {
         font-size: 1rem;
+    }
+    .card-body {
+        padding: 20px 30px;
     }
 }
 
