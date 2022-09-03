@@ -39,7 +39,7 @@ const showNewsByCategory = (data, catName) => {
     mainHeading.innerHTML = `${allNews.length ? allNews.length : "No" } News Found in ${catName}`
     allNewsDiv.innerHTML = ` `;
     allNews.forEach(news => {
-        // console.log(news)
+        console.log(news)
         const {
             author: {
                 img,
@@ -47,6 +47,7 @@ const showNewsByCategory = (data, catName) => {
                 published_date
             },
             details,
+            total_view,
             image_url,
             rating: {
                 badge,
@@ -84,6 +85,7 @@ const showNewsByCategory = (data, catName) => {
                                 </div>
                                 <div class="col-4 rating">
                                     <h5>Rating: ${badge} ${number} </h5>
+                                    <h5>Views: ${total_view} </h5>
                                 </div>
                                 <div class="col-4 readmore">
                                     <a href="#" class="btn btn-primary" onclick="getNewsDetailsById('${id}')" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Read News</a>

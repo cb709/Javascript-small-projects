@@ -86,7 +86,6 @@ hr {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
 }
 .rating {
     text-align: center;
@@ -114,6 +113,7 @@ hr {
     }
     .author-box {
         width: 100%;
+        margin-bottom: 20px;
     }
     .rating {
         width: 60%;
