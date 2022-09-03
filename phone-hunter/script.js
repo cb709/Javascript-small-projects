@@ -63,6 +63,7 @@ const showPhoneDetails = (data) => {
     const {
         brand,
         name,
+        image,
         releaseDate,
         mainFeatures: {
             chipSet,
@@ -88,6 +89,7 @@ const showPhoneDetails = (data) => {
                 </button>
             </div>
             <div class="modal-body">
+            <img src="${image}">
             <p><b>Release Date:</b> ${releaseDate}</p>
             <p><b>Chipset:</b> ${chipSet}</p>
             <p><b>Memory:</b> ${memory}</p>
