@@ -8,3 +8,10 @@ img {
 .logo {
     max-width: 45px;
 }
+.description {
+    font-size: 1rem;
+}
+.tools {
+    font-size: .8rem;
+    font-style: italic;
+}

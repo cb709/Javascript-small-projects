@@ -1,0 +1,13 @@
+body {
+    background: url(images/bg-image.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+main {
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.473);
+}
+
+.d-none {
+    display: none !important;
+}
